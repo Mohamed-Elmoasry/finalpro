@@ -1,0 +1,57 @@
+@import "tailwindcss";
+
+@theme{
+  --color-primary-50:#f0fdf4;
+  --color-primary-100:#dcfce7;
+  --color-primary-200:#bbf7d0;
+  --color-primary-300:#86efac;
+  --color-primary-400:#4ade80;
+  --color-primary-500:#22c55e;
+  --color-primary-600:#16a34a;
+  --color-primary-700:#15803d;
+  --color-primary-800:#166534;
+  --color-primary-900:#14532d;
+  --animate-slide-in:slideIn 300ms ease-out;
+} 
+@keyframes slideIn {
+  from{
+    transform: translateX(-100%);
+  }
+  to{
+    transform: translateX(0);
+  }
+}
+@layer base{
+  body{
+  font-family: 'Poppins', sans-serif;
+  }
+  span,a{
+    @apply inline-block
+  }
+  button,a{
+    @apply cursor-pointer
+  }
+  
+}
+
+@layer components{
+  .form-control{
+    @apply px-3 py-2 rounded-lg border  border-gray-400/50 focus:outline-none focus:border-primary-500
+  }
+  .btn{
+    @apply px-2 py-2 rounded-md bg-gray-200 text-gray-600 font-semibold hover:bg-gray-300 transition-colors duration-300
+  }
+}
+.container{
+width: 90%;
+margin-inline: auto;
+}
+
+
+
+.swiper-button-prev,.swiper-button-next{
+  @apply size-12! bg-primary-500/50 rounded-full after:text-lg! after:text-white after:font-bold
+}
+.swiper-pagination-bullet-active{
+  @apply w-4! bg-white! rounded-full!
+}
